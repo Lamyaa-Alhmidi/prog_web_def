@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open Index.html",
+            "file": "/Users/eng.lamyaa/Desktop/prog_web_def/Index.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome",
+            "runtimeExecutable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        }
+    ]
+}
