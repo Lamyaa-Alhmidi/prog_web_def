@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>الطقس في الرياض</title>
+</head>
+<body>
+  <h1>الطقس في الرياض</h1>
+  <div id="weather-data"></div>
+
+  <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
+  <script>
+    const API_KEY = "2b05756a39d707bc700cad021607874f";
+
+    const getWeatherData = async () => {
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=الرياض&appid=${API_KEY}&units=metric`;
+      const response = await axios.get(url);
+      return response.data;
+    };
+
+    const renderWeatherData = (data) => {
+      const weather = data.weather[0];
+      const temperature = data.main.temp;
+
+      const weatherData = `
+        <p>الحالة الجوية: ${weather.main}</p>
+        <p>درجة الحرارة: ${temperature} درجة مئوية</p>
+      `;
+
+      document.getElementById("weather-data").innerHTML = weatherData;
+    };
+
+    getWeatherData().then(renderWeatherData);
+  </script>
+</body>
+</html>
