@@ -3,15 +3,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+
 const Book = require('./models/Book'); // Import the Book model
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
+mongoose.connect('mongodb+srv://1234:1234@cluster0.lg0pj4y.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
-mongoose.connect('mongodb://localhost/libraryDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
